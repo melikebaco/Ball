@@ -7303,8 +7303,8 @@ var Bounds = _dereq_('../geometry/Bounds');
                     lx = lastPoint.x;
                     ly = lastPoint.y;
                 } else {
-                    elx = 0;
-                    ely = 0;
+                    lx = 0;
+                    ly = 0;
                 }
 
                 var point = {

@@ -1,6 +1,5 @@
-// /)0.0(\
 class Box{
-    constructor(x,y,width,height){
+    constructor(x,y){
         
         var options={
             isStatic:true,
@@ -8,24 +7,21 @@ class Box{
              density:1
         }
 
-        this.body = Bodies.rectangle(x,y,width,height,options);
-        this.width = width;
-        this.height = height;
-        World.add(myWorld,this.body);
-
+        this.wall1 = Bodies.rectangle(800,390,100,10,options);
+        this.wall2 = Bodies.rectangle(820,380,10,40,options);
+        this.wall3 = Bodies.rectangle(850,380,10,40,options);
+        World.add(myWorld,this.wall1);
+        World.add(myWorld,this.wall2);
+        World.add(myWorld,this.wall3);
+        this.image = loadImage ("dustbingreen.png")
     }
 
     display(){
-        var pos = this.body.position;
-        var angle = this.body.angle;
+        var pos = this.wall2.position;
         push();
-        translate(pos.x,pos.y);
-        rotate(angle);
-        rectMode(CENTER);
-        strokeWeight(4);
-        stroke("green");
-        fill(255);
-        rect(0,0,this.width,this.height);
+        imageMode(CENTER);
+
+        image(this.image,pos.x,pos.y,40,40);
         pop();
     }
 

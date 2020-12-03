@@ -441,7 +441,7 @@ p5.prototype.loadImageElement = function(path, successCallback, failureCallback)
     p5._friendlyFileLoadError(0, img.src);
     // don't get failure callback mixed up with decrementPreload
     if ((typeof failureCallback === 'function') &&
-      (failureCallback != decrementPreload)) {
+      (failureCallback !== decrementPreload)) {
       failureCallback(e);
     }
   };
@@ -866,7 +866,7 @@ p5.prototype.removeSprite = function(sprite) {
 * Note: it does not render the sprites.
 *
 * @method updateSprites
-* @param {Bolean} updating false to pause the update, true to resume
+* @param {Boolean} updating false to pause the update, true to resume
 */
 p5.prototype.updateSprites = function(upd) {
 

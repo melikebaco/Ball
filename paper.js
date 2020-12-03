@@ -10,6 +10,7 @@ class Paper {
         this.y=y;
         this.r=r;
         this.body=Bodies.circle(this.x,this.y,this.r/2,options);
+        this.image = loadImage("paper.png")
         World.add(myWorld,this.body);
     }
     display(){
@@ -17,10 +18,10 @@ class Paper {
         push();
         translate(paperpos.x,paperpos.y);
       //  rectmode(CENTER)
-        strokeWeight(3);
+        //strokeWeight(3);
         //fill(255,0,255);
-        fill("red");
-        ellipse(0,0,this.r,this.r);
+        //fill("red");
+      image(this.image,0,0,this.r,this.r)
         pop();
     }
 }

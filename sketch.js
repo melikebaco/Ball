@@ -8,6 +8,7 @@ var myEngine,myWorld;
 
 function preload()
 {
+
 }
 
 function setup() {
@@ -19,9 +20,7 @@ function setup() {
 	//Create the Bodies Here.
 
 	ground = new Ground(600,height,1200,20);
-	box1 = new Box(800,390,100,10);
-	box2 = new Box(750,380,10,40);
-	box3 = new Box(850,380,10,40);
+	box1 = new Box(800,390);
 	paper = new Paper(200,300,25);
 
 //	Engine.run(myEngine);
@@ -30,13 +29,11 @@ function setup() {
 
 function draw() {
   rectMode(CENTER);
-  background(0);
+  background("White");
   Engine.update(myEngine);
 
   ground.display();
   box1.display();
-  box2.display();
-  box3.display();
   paper.display();
 }
 
